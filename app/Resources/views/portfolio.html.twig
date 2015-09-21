@@ -1,0 +1,22 @@
+{% if portfolio is defined %}
+{% if portfolio["heading"] is defined or portfolio["projects"] is defined %}
+
+<div class="row">
+    <div class="12u">
+        <section>
+            {% if portfolio["heading"] is defined %}
+                <header class="major"><h2>{{ portfolio["heading"] }}</h2></header>
+            {% endif %}
+            <div class="row">
+                {% if portfolio["projects"] is defined %}
+                    {% for project in portfolio["projects"] %}
+                        {% include 'portfolioitem.html.twig' %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endif %}
+{% endif %}
