@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         {% block stylesheets %}
             {% stylesheets "bundles/app/css/*" filter="cssrewrite" %}
-                <link rel="stylesheet" href="{{ asset_url }}"  />
+                <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/dopetrope.css') }}"  />
             {% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />

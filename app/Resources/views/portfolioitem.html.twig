@@ -1,6 +1,14 @@
 <div class="4u 12u(mobile)">
     <section class="box">
-        <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+        {% if project["image"] is defined %}
+            {% if project["route"] is defined %}
+                <a href="{{ project["route"] }}" class="image featured">
+                    <img src='{{ asset("bundles/app/images/" ~ project["image"]) }}' alt="" />
+                </a>
+            {% else %}
+                <img src='{{ asset("bundles/app/images/{project['image']}") }}' alt="" />
+            {% endif %}
+        {% endif %}
         <header><h3>{{ project["name"] }}</h3></header>
         <p>{{ project["description"] }}</p>
         <footer><a href="{{ project["route"] }}" class="button alt">Find out more</a></footer>

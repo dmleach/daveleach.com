@@ -53,8 +53,9 @@ class HomeController extends Controller
             0 => array (
                 "name" => "daveleach.work",
                 "description" => "A website for my professional projects and
-                    blog, as well as a sandbox to learn new technologies. You
-                    might be looking at it and this very moment!",
+                    blog, as well as a sandbox to learn new technologies. You're
+                    probably looking at it at this very moment!",
+                "image" => "daveleachwork.jpg",
                 "route" => "project_daveleach"
             )
         );
