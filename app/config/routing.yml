@@ -18,6 +18,14 @@ project_daveleach:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
+project_rtbmassage:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+project_soundscape:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
 resume:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }

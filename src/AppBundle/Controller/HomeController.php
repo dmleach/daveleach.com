@@ -39,7 +39,8 @@ class HomeController extends Controller
                 "navMenu" => $this->calcNavMenu(),
                 "portfolio" => array (
                     "heading" => "Current Projects",
-                    "projects" => $this->calcProjects()
+                    "projects" => $this->calcProjects(),
+                    "route" => "portfolio"
                 ),
                 "subtitle" => "Delphi and PHP programmer in Atlanta, Georgia",
                 "title" => "Dave Leach"
@@ -50,13 +51,27 @@ class HomeController extends Controller
     protected function calcProjects()
     {
         return array (
-            0 => array (
+            array (
                 "name" => "daveleach.work",
                 "description" => "A website for my professional projects and
                     blog, as well as a sandbox to learn new technologies. You're
                     probably looking at it at this very moment!",
-                "image" => "daveleachwork.jpg",
+                //"image" => "daveleachwork.jpg",
                 "route" => "project_daveleach"
+            ),
+            array (
+                "name" => "Soundscape",
+                "description" => "Website, hosting, and feed for Soundscape, a
+                    progressive rock podcast",
+                //"image" => "daveleachwork.jpg",
+                "route" => "project_soundscape"
+            ),
+            array (
+                "name" => "Renewal Therapeutic Bodyworks",
+                "description" => "Website and hosting for Renewal Therapeutic
+                    Bodyworks, a massage therapy company",
+                //"image" => "daveleachwork.jpg",
+                "route" => "project_rtbmassage"
             )
         );
     }
