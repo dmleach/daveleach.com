@@ -6,6 +6,14 @@ blog:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
+blog_post:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+blog_post_comments:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
 home:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }

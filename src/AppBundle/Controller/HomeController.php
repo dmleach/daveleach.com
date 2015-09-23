@@ -8,6 +8,38 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller
 {
+    protected function calcBlogPosts()
+    {
+        return array (
+            array (
+                "image" => "pic08.jpg",
+                "title" => "Test blog post",
+                "time" => "last week",
+                 "excerpt" => "One day I sat down and I wrote a test blog post.
+                     It was brilliant and the whole internet came by my site
+                     to read it. Here's the way the post began.",
+                "route" => "blog_post",
+                "comments" => array (
+                    "count" => 51632,
+                    "route" => "blog_post_comments"
+                )
+            ),
+            array (
+                "image" => "pic08.jpg",
+                "title" => "Test blog post",
+                "time" => "last week",
+                "excerpt" => "One day I sat down and I wrote a test blog post.
+                    It was brilliant and the whole internet came by my site
+                    to read it. Here's the way the post began.",
+                "route" => "blog_post",
+                "comments" => array (
+                    "count" => 51632,
+                    "route" => "blog_post_comments"
+                )
+            )
+        );
+    }
+
     protected function calcNavMenu()
     {
         return array (
@@ -35,6 +67,11 @@ class HomeController extends Controller
         return $this->render(
             "base.html.twig",
             array (
+                "blog" => array (
+                    "heading" => "The Blog",
+                    "posts" => $this->calcBlogPosts(),
+                    "route" => "blog"
+                ),
                 "body" => "Hello!",
                 "navMenu" => $this->calcNavMenu(),
                 "portfolio" => array (

@@ -1,0 +1,27 @@
+{% if blog is defined %}
+{% if blog['heading'] is defined or blog['posts'] is defined %}
+
+<div class="row">
+    <div class="12u">
+        <section>
+            {% if blog['heading'] is defined and blog['route'] is defined %}
+                <header class="major">
+                    <h2><a href="{{ path(blog['route']) }}">{{ blog['heading'] }}</a></h2>
+                </header>
+            {% endif %}
+            {% if blog['heading'] is defined and blog['route'] is not defined %}
+                <header class="major"><h2>{{ blog['heading'] }}</h2></header>
+            {% endif %}
+            <div class="row">
+                {% if blog['posts'] is defined %}
+                    {% for blog in blog['posts'] %}
+                        {% include 'blogpost.html.twig' %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endif %}
+{% endif %}
