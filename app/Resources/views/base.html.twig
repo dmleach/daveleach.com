@@ -7,9 +7,10 @@
         {% block stylesheets %}
             {% stylesheets "bundles/app/css/*" filter="cssrewrite" %}
                 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/dopetrope.css') }}"  />
+				<link rel="stylesheet" href="{{ asset('bundles/app/css/font-awesome.min.css') }}">
             {% endstylesheets %}
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/daveleach.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/oglethorpe-d.ico') }}" />
 	</head>
 
     <body class="{{ bodyclass }}">

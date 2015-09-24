@@ -3,13 +3,17 @@
         <header>
             <h2>Get in touch</h2>
         </header>
-        <!-- <ul class="social">
-            <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
-            <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-            <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-            <li><a class="icon fa-linkedin" href="#"><span class="label">LinkedIn</span></a></li>
-            <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
-        </ul> -->
+        {% if social is defined %}
+            <ul class="social">
+                {% for sitename, site in social %}
+                    <li>
+                        <a class="icon fa-{{ site['icon'] }}" href="{{ site['link'] }}" target="daveleachsocial">
+                            <span class="label">{{ sitename }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
         <ul class="contact">
             {% if address is defined %}
                 <li>

@@ -60,11 +60,32 @@ class BaseController extends Controller
     {
         $Parameters = array (
             "bodyclass" => $this->displayTemplate(),
+            "copyright" => "2015 Dave Leach",
+            "favicon" => "oglethorpe-d.ico",
             "navMenu" => $this->calcNavMenu(),
             "title" => "Dave Leach"
         );
 
-        return array_merge ($Parameters, $this->displayContact());
+        return array_merge (
+            $Parameters,
+            $this->displayContact(),
+            $this->displaySocial()
+        );
+    }
+    protected function displaySocial()
+    {
+        return array (
+            "social" => array (
+                "Github" => array (
+                    "icon" => "github",
+                    "link" => "https://github.com/dmleach"
+                ),
+                "LinkedIn" => array (
+                    "icon" => "linkedin",
+                    "link" => "https://www.linkedin.com/in/dmleach"
+                )
+            )
+        );
     }
 
     protected function displayTemplate()

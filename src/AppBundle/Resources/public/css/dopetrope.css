@@ -1579,6 +1579,14 @@
 						background: #ea3723;
 					}
 
+				ul.social li a.fa-github {
+					background: #000000;
+				}
+
+					ul.social li a.fa-github:hover {
+						background: #404040;
+					}
+
 	ol.default {
 		list-style: decimal;
 		padding-left: 1.25em;
