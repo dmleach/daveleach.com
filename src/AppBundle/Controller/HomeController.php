@@ -65,7 +65,7 @@ class HomeController extends Controller
     public function displayAction()
     {
         return $this->render(
-            "base.html.twig",
+            "home.html.twig",
             array (
                 "blog" => array (
                     "heading" => "The Blog",
