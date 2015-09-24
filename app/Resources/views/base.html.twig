@@ -16,15 +16,10 @@
 		<div id="page-wrapper">
 			<div id="header-wrapper">
 				<div id="header">
+					<h1><a href="{{ path('home') }}">{{ title }}</a></h1>
 					{% include 'navmenu.html.twig' %}
-					<section id="banner">
-                        {% block headerBanner %}
-    						<header>
-    							<h2>{{ title }}</h2>
-    							<p>{{ subtitle }}</p>
-    						</header>
-					    {% endblock %}
-                    </section>
+					{% block header %}
+					{% endblock %}
 				</div>
 			</div>
             <div id="main-wrapper">

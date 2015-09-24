@@ -22,17 +22,9 @@ portfolio:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
-project_daveleach:
-    path:       /
-    defaults:   { _controller: AppBundle:Home:display }
-
-project_rtbmassage:
-    path:       /
-    defaults:   { _controller: AppBundle:Home:display }
-
-project_soundscape:
-    path:       /
-    defaults:   { _controller: AppBundle:Home:display }
+portfolio_project:
+    path:       /portfolio/{id}
+    defaults:   { _controller: AppBundle:Project:display }
 
 resume:
     path:       /
