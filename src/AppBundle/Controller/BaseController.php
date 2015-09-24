@@ -35,6 +35,22 @@ class BaseController extends Controller
         return "no-sidebar";
     }
 
+    protected function displayContact()
+    {
+        return array (
+            "address" => array (
+                "1355 Euclid Ave NE Apt 25-B",
+                "Atlanta, GA 30307"
+            ),
+            "email" => array (
+                "dave@daveleach.work"
+            ),
+            "phone" => array (
+                "(678) 849-0054"
+            )
+        );
+    }
+
     protected function displayParameters()
     {
         return array ();
@@ -42,11 +58,13 @@ class BaseController extends Controller
 
     protected function displayParametersBase()
     {
-        return array (
+        $Parameters = array (
             "bodyclass" => $this->displayTemplate(),
             "navMenu" => $this->calcNavMenu(),
             "title" => "Dave Leach"
         );
+
+        return array_merge ($Parameters, $this->displayContact());
     }
 
     protected function displayTemplate()

@@ -40,7 +40,7 @@
                     			{% endif %}
                     		{% endfor %}
                     	{% endif %}
-                    	{% if contact is defined %}
+                    	{% if address is defined or email is defined or phone is defined%}
                     		{% include 'contact.html.twig' %}
                     	{% endif %}
                     </div>

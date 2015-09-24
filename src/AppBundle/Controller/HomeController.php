@@ -50,26 +50,26 @@ class HomeController extends BaseController
                     "id" => "daveleachwork"
                 )
             ),
-            array (
-                "name" => "Soundscape",
-                "description" => "Website, hosting, and feed for Soundscape, a
-                    progressive rock podcast",
-                //"image" => "daveleachwork.jpg",
-                "route" => array (
-                    "path" => "portfolio_project",
-                    "id" => "soundscape"
-                )
-            ),
-            array (
-                "name" => "Renewal Therapeutic Bodyworks",
-                "description" => "Website and hosting for Renewal Therapeutic
-                    Bodyworks, a massage therapy company",
-                //"image" => "daveleachwork.jpg",
-                "route" => array (
-                    "path" => "portfolio_project",
-                    "id" => "rtbmassage"
-                )
-            )
+            // array (
+            //     "name" => "Soundscape",
+            //     "description" => "Website, hosting, and feed for Soundscape, a
+            //         progressive rock podcast",
+            //     //"image" => "daveleachwork.jpg",
+            //     "route" => array (
+            //         "path" => "portfolio_project",
+            //         "id" => "soundscape"
+            //     )
+            // ),
+            // array (
+            //     "name" => "Renewal Therapeutic Bodyworks",
+            //     "description" => "Website and hosting for Renewal Therapeutic
+            //         Bodyworks, a massage therapy company",
+            //     //"image" => "daveleachwork.jpg",
+            //     "route" => array (
+            //         "path" => "portfolio_project",
+            //         "id" => "rtbmassage"
+            //     )
+            // )
         );
     }
 
@@ -81,11 +81,11 @@ class HomeController extends BaseController
     protected function displayParameters()
     {
         return array (
-            "blog" => array (
-                "heading" => "The Blog",
-                "posts" => $this->calcBlogPosts(),
-                "route" => "blog"
-            ),
+            // "blog" => array (
+            //     "heading" => "The Blog",
+            //     "posts" => $this->calcBlogPosts(),
+            //     "route" => "blog"
+            // ),
             "headline" => "Hi! I'm Dave Leach",
             "portfolio" => array (
                 "heading" => "Current Projects",

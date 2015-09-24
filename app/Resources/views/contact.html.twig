@@ -1,32 +1,49 @@
 <div class="4u 12u(mobile)">
     <section>
         <header>
-            <h2>Vitae tempor lorem</h2>
+            <h2>Get in touch</h2>
         </header>
-        <ul class="social">
+        <!-- <ul class="social">
             <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
             <li><a class="icon fa-twitter" href="#"><span class="label">Twitter</span></a></li>
             <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
             <li><a class="icon fa-linkedin" href="#"><span class="label">LinkedIn</span></a></li>
             <li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
-        </ul>
+        </ul> -->
         <ul class="contact">
-            <li>
-                <h3>Address</h3>
-                <p>
-                    Untitled Incorporated<br />
-                    1234 Somewhere Road Suite<br />
-                    Nashville, TN 00000-0000
-                </p>
-            </li>
-            <li>
-                <h3>Mail</h3>
-                <p><a href="#">someone@untitled.tld</a></p>
-            </li>
-            <li>
-                <h3>Phone</h3>
-                <p>(800) 000-0000</p>
-            </li>
+            {% if address is defined %}
+                <li>
+                    <h3>Address</h3>
+                    <p>
+                        {% for addressline in address %}
+                            {{ addressline }}
+                            {% if not loop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endif %}
+            {% if email is defined %}
+                <li>
+                    <h3>Email</h3>
+                    <p>
+                        {% for emailaddress in email %}
+                            <a href="mailto:{{ emailaddress }}">{{ emailaddress }}</a>
+                            {% if not loop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endif %}
+            {% if phone is defined %}
+                <li>
+                    <h3>Phone</h3>
+                    <p>
+                        {% for phonenumber in phone %}
+                            {{ phonenumber }}
+                            {% if not loop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endif %}
         </ul>
     </section>
 </div>
