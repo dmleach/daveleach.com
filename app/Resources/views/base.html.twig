@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{{ title }}{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block stylesheets %}
+            {% stylesheets "bundles/app/css/*" filter="cssrewrite" %}
+                <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/dopetrope.css') }}"  />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/daveleach.ico') }}" />
+	</head>
+
+    <body class="{{ bodyclass }}">
+		<div id="page-wrapper">
+			<div id="header-wrapper">
+				<div id="header">
+					{% include 'navmenu.html.twig' %}
+					<section id="banner">
+                        {% block headerBanner %}
+    						<header>
+    							<h2>{{ title }}</h2>
+    							<p>{{ subtitle }}</p>
+    						</header>
+					    {% endblock %}
+                    </section>
+				</div>
+			</div>
+            <div id="main-wrapper">
+            	<div class="container">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="footer-wrapper">
+            	<section id="footer" class="container">
+                    {% block footer %}
+                    {% endblock %}
+                    <div class="row">
+                    	{% if links is defined %}
+                    		{% for linkset in links %}
+                    			{% if loop.index <= 2 %}
+                    				{% include 'links.html.twig' %}
+                    			{% endif %}
+                    		{% endfor %}
+                    	{% endif %}
+                    	{% if contact is defined %}
+                    		{% include 'contact.html.twig' %}
+                    	{% endif %}
+                    </div>
+                    <div class="row">
+                        {% include 'credit.html.twig' %}
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/jquery.dropotron.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/skel.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/skel-viewport.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/util.js') }}"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="{{ asset('bundles/app/js/main.js') }}"></script>
+    </body>
+</html>

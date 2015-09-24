@@ -73,6 +73,7 @@ class HomeController extends Controller
                     "route" => "blog"
                 ),
                 "body" => "Hello!",
+                "bodyclass" => "homepage",
                 "navMenu" => $this->calcNavMenu(),
                 "portfolio" => array (
                     "heading" => "Current Projects",
