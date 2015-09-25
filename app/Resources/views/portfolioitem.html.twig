@@ -1,12 +1,9 @@
 <div class="4u 12u(mobile)">
     <section class="box">
-        {% if project.image is defined and project.routepath is defined and project.routeid is defined %}
-            <a href="{{ path(project.routepath, {'id': project.routeid}) }}">
+        {% if project.image is defined  %}
+            <a href="{{ path('portfolio_project', {'id': project.shortname}) }}">
                 <img src="{{ asset('bundles/app/images/' ~ project.image) }}" class="image" alt="" />
             </a>
-        {% endif %}
-        {% if project.image is defined and (project.routepath is not defined or project.routeid is not defined) %}
-            <img src="{{ asset('bundles/app/images/' ~ project.image) }}" class="image" alt="" />
         {% endif %}
         {% if project.name is defined %}
             <header><h3>{{ project.name }}</h3></header>
@@ -14,8 +11,6 @@
         {% if project.description is defined %}
             <p>{{ project.description }}</p>
         {% endif %}
-        {% if project.routepath is defined and project.routeid is defined %}
-            <footer><a href="{{ path(project.routepath, {'id': project.routeid}) }}" class="button alt">Find out more</a></footer>
-        {% endif %}
+        <footer><a href="{{ path('portfolio_project', {'id': project.shortname}) }}" class="button alt">Find out more</a></footer>
     </section>
 </div>

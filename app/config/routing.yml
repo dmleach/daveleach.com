@@ -2,6 +2,10 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+home:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
 blog:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
@@ -14,16 +18,12 @@ blog_post_comments:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
-home:
-    path:       /
-    defaults:   { _controller: AppBundle:Home:display }
-
 portfolio:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
 portfolio_project:
-    path:       /portfolio/{id}
+    path:       /portfolio/{shortname}
     defaults:   { _controller: AppBundle:Project:display }
 
 resume:

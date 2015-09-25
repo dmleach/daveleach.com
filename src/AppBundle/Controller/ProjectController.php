@@ -4,6 +4,14 @@ namespace AppBundle\Controller;
 
 class ProjectController extends BaseController
 {
+    private $ShortName = null;
+
+    public function displayAction($shortname = null)
+    {
+        $this->ShortName = $shortname;
+        return parent::displayAction();
+    }
+
     protected function displayBodyClass()
     {
         return "right-sidebar";
@@ -12,7 +20,7 @@ class ProjectController extends BaseController
     protected function displayParameters()
     {
         return array (
-            "name" => "Project name"
+            "name" => $this->ShortName
         );
     }
 

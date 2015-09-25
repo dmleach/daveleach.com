@@ -8,6 +8,11 @@ AppBundle\Entity\Project:
             generator:
                 strategy: AUTO
     fields:
+        shortname:
+            column: PROJ_SHORT_NAME
+            type: string
+            length: 20
+            unique: true
         name:
             column: PROJ_NAME
             type: string
@@ -15,11 +20,3 @@ AppBundle\Entity\Project:
         description:
             column: PROJ_DESCRIPTION
             type: text
-        routepath:
-            column: PROJ_ROUTE_PATH
-            type: string
-            length: 30
-        routeid:
-            column: PROJ_ROUTE_ID
-            type: string
-            length: 30
