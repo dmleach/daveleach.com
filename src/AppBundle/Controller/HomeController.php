@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Project;
+
 class HomeController extends BaseController
 {
     protected function calcBlogPosts()
@@ -36,43 +38,6 @@ class HomeController extends BaseController
         );
     }
 
-    protected function calcProjects()
-    {
-        return array (
-            array (
-                "name" => "daveleach.work",
-                "description" => "A website for my professional projects and
-                    blog, as well as a sandbox to learn new technologies. You're
-                    probably looking at it at this very moment!",
-                //"image" => "daveleachwork.jpg",
-                "route" => array (
-                    "path" => "portfolio_project",
-                    "id" => "daveleachwork"
-                )
-            ),
-            // array (
-            //     "name" => "Soundscape",
-            //     "description" => "Website, hosting, and feed for Soundscape, a
-            //         progressive rock podcast",
-            //     //"image" => "daveleachwork.jpg",
-            //     "route" => array (
-            //         "path" => "portfolio_project",
-            //         "id" => "soundscape"
-            //     )
-            // ),
-            // array (
-            //     "name" => "Renewal Therapeutic Bodyworks",
-            //     "description" => "Website and hosting for Renewal Therapeutic
-            //         Bodyworks, a massage therapy company",
-            //     //"image" => "daveleachwork.jpg",
-            //     "route" => array (
-            //         "path" => "portfolio_project",
-            //         "id" => "rtbmassage"
-            //     )
-            // )
-        );
-    }
-
     protected function displayBodyClass()
     {
         return "homepage";
@@ -89,7 +54,7 @@ class HomeController extends BaseController
             "headline" => "Hi! I'm Dave Leach",
             "portfolio" => array (
                 "heading" => "Current Projects",
-                "projects" => $this->calcProjects(),
+                "projects" => $this->fetchProjects(),
                 "route" => "portfolio"
             ),
             "subtitle" => "Delphi and PHP programmer in Atlanta, Georgia"
@@ -99,6 +64,11 @@ class HomeController extends BaseController
     protected function displayTemplate()
     {
         return 'home.html.twig';
+    }
+
+    protected function fetchProjects()
+    {
+        return $this->getDoctrine()->getRepository("AppBundle:Project")->findAll();
     }
 }
 

@@ -1,21 +1,21 @@
 <div class="4u 12u(mobile)">
     <section class="box">
-        {% if (project['image'] is defined) and (project['route'] is defined) %}
-            <a href="{{ path(project['route']['path'], {'id': project['route']['id']}) }}">
-                <img src="{{ asset('bundles/app/images/' ~ project['image']) }}" class="image" alt="" />
+        {% if project.image is defined and project.routepath is defined and project.routeid is defined %}
+            <a href="{{ path(project.routepath, {'id': project.routeid}) }}">
+                <img src="{{ asset('bundles/app/images/' ~ project.image) }}" class="image" alt="" />
             </a>
         {% endif %}
-        {% if (project['image'] is defined) and (project['route'] is not defined) %}
-            <img src="{{ asset('bundles/app/images/' ~ project['image']) }}" class="image" alt="" />
+        {% if project.image is defined and (project.routepath is not defined or project.routeid is not defined) %}
+            <img src="{{ asset('bundles/app/images/' ~ project.image) }}" class="image" alt="" />
         {% endif %}
-        {% if project['name'] is defined %}
-            <header><h3>{{ project['name'] }}</h3></header>
+        {% if project.name is defined %}
+            <header><h3>{{ project.name }}</h3></header>
         {% endif %}
-        {% if project['description'] is defined %}
-            <p>{{ project['description'] }}</p>
+        {% if project.description is defined %}
+            <p>{{ project.description }}</p>
         {% endif %}
-        {% if project['route'] is defined %}
-            <footer><a href="{{ path(project['route']['path'], {'id': project['route']['id']}) }}" class="button alt">Find out more</a></footer>
+        {% if project.routepath is defined and project.routeid is defined %}
+            <footer><a href="{{ path(project.routepath, {'id': project.routeid}) }}" class="button alt">Find out more</a></footer>
         {% endif %}
     </section>
 </div>
