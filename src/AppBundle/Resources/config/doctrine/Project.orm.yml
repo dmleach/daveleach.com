@@ -20,3 +20,14 @@ AppBundle\Entity\Project:
         description:
             column: PROJ_DESCRIPTION
             type: text
+    manyToMany:
+        technologies:
+            targetEntity: Technology
+            joinTable:
+                name: PROJECT_TECHNOLOGIES
+                joinColumns:
+                    PROJ_ID:
+                        referencedColumnName: PROJ_ID
+                inverseJoinColumns:
+                    TECH_ID:
+                        referencedColumnName: TECH_ID

@@ -1,7 +1,7 @@
 <div class="4u 12u(mobile)">
     <section class="box">
         {% if project.image is defined  %}
-            <a href="{{ path('portfolio_project', {'id': project.shortname}) }}">
+            <a href="{{ path('portfolio_project', {'shortname': project.shortname}) }}">
                 <img src="{{ asset('bundles/app/images/' ~ project.image) }}" class="image" alt="" />
             </a>
         {% endif %}
@@ -11,6 +11,8 @@
         {% if project.description is defined %}
             <p>{{ project.description }}</p>
         {% endif %}
-        <footer><a href="{{ path('portfolio_project', {'id': project.shortname}) }}" class="button alt">Find out more</a></footer>
+        {% if project.shortname is defined %}
+            <footer><a href="{{ path('portfolio_project', {'shortname': project.shortname}) }}" class="button alt">Find out more</a></footer>
+        {% endif %}
     </section>
 </div>

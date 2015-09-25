@@ -6,8 +6,10 @@
 		<article class="box post">
 			<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 			<header>
-				<h2>{{ name }}</h2>
-				<p>Lorem ipsum dolor sit amet feugiat</p>
+				<h2>{{ project.name }}</h2>
+				{% for technology in project.technologies %}
+					<p>{{ technology.name }}</p>
+				{% endfor %}
 			</header>
 			<p>
 				Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor

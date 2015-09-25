@@ -1,0 +1,20 @@
+AppBundle\Entity\Technology:
+    type: entity
+    table: TECHNOLOGIES
+    id:
+        id:
+            column: TECH_ID
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        shortname:
+            column: TECH_SHORT_NAME
+            type: string
+            length: 20
+            unique: true
+        name:
+            column: TECH_NAME
+            type: string
+            length: 100
+    
