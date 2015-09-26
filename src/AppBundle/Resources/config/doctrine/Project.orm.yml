@@ -17,6 +17,9 @@ AppBundle\Entity\Project:
             column: PROJ_NAME
             type: string
             length: 100
+        synopsis:
+            column: PROJ_SYNOPSIS
+            type: text
         description:
             column: PROJ_DESCRIPTION
             type: text

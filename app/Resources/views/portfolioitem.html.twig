@@ -8,8 +8,8 @@
         {% if project.name is defined %}
             <header><h3>{{ project.name }}</h3></header>
         {% endif %}
-        {% if project.description is defined %}
-            <p>{{ project.description }}</p>
+        {% if project.synopsis is defined %}
+            <p>{{ project.synopsis }}</p>
         {% endif %}
         {% if project.shortname is defined %}
             <footer><a href="{{ path('portfolio_project', {'shortname': project.shortname}) }}" class="button alt">Find out more</a></footer>
