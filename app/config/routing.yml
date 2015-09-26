@@ -27,5 +27,5 @@ portfolio_project:
     defaults:   { _controller: AppBundle:Project:display }
 
 resume:
-    path:       /
-    defaults:   { _controller: AppBundle:Home:display }
+    path:       /resume
+    defaults:   { _controller: AppBundle:Resume:display }

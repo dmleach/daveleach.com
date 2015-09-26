@@ -31,7 +31,7 @@ class ProjectController extends BaseController
 
     protected function fetchProject($shortname)
     {
-        $QueryResult = $this->Project = $this->getDoctrine()
+        $QueryResult = $this->getDoctrine()
             ->getRepository("AppBundle:Project")
             ->findBy(array ("shortname" => $shortname));
 

@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="row">
+	<div class="8u 12u(mobile)">
+		<article class="box post">
+            <section>
+                <h2>Resume</h2>
+            </section>
+            {% if jobs is defined %}
+                <!-- <section> -->
+                    <h3>Experience</h3>
+                    {% for job in jobs %}
+                        <section>
+                        <h4>{{ job.company }}</h4>
+                        {% if job.title is defined and job.title is not null %}
+                            {{ job.title }}<br>
+                        {% endif %}
+                        {% if job.startMonth is defined and job.endMonth is defined %}
+                            {% if job.startMonth is not null and job.endMonth is not null %}
+                                {{ job.startMonth }} to {{ job.endMonth }}<br>
+                            {% endif %}
+                            {% if job.startMonth is not null and job.endMonth is null %}
+                                {{ job.startMonth }} to present<br>
+                            {% endif %}
+                            {% if job.startMonth is null and job.endMonth is not null %}
+                                Through {{ job.endMonth }}<br>
+                            {% endif %}
+                        {% endif %}
+                    </section>
+                    {% endfor %}
+                <!-- </section> -->
+            {% endif %}
+		</article>
+	</div>
+</div>
+{% endblock %}
