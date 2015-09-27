@@ -41,6 +41,9 @@
                     			{% endif %}
                     		{% endfor %}
                     	{% endif %}
+						{% if about is defined %}
+							{% include 'about.html.twig' %}
+						{% endif %}
                     	{% if address is defined or email is defined or phone is defined%}
                     		{% include 'contact.html.twig' %}
                     	{% endif %}

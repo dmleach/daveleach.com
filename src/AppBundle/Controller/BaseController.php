@@ -35,6 +35,23 @@ class BaseController extends Controller
         return "no-sidebar";
     }
 
+    protected function displayAbout()
+    {
+        return array (
+            "header" => "About me",
+            "text" => array (
+                "I've been developing software professionally since the
+                summer of 1996, primarily using Delphi. In the past few years
+                I've begun transitioning into creating software for the web
+                using PHP.",
+                "When I'm not programming you'll find me playing European-style
+                strategy board games or brushing up on my photography and
+                cooking. I write about my hobbies, including my experience being
+                a contestant on Jeopardy!, on my personal website: dmleach.com"
+            )
+        );
+    }
+
     protected function displayContact()
     {
         return array (
@@ -59,7 +76,8 @@ class BaseController extends Controller
     protected function displayParametersBase()
     {
         $Parameters = array (
-            "bodyclass" => $this->displayTemplate(),
+            "about" => $this->displayAbout(),
+            "bodyclass" => $this->displayBodyClass(),
             "copyright" => "2015 Dave Leach",
             "favicon" => "oglethorpe-d.ico",
             "navMenu" => $this->calcNavMenu(),
