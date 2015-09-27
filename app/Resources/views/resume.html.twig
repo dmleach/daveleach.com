@@ -27,6 +27,11 @@
                                 Through {{ job.endMonth }}<br>
                             {% endif %}
                         {% endif %}
+                        {% if job.accomplishments is defined and job.accomplishments is not null %}
+                            {% for accomplishment in job.accomplishments %}
+                                {{ accomplishment.description }}<br>
+                            {% endfor %}
+                        {% endif %}
                     </section>
                     {% endfor %}
                 <!-- </section> -->

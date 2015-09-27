@@ -5,6 +5,7 @@ AppBundle\Entity\Job:
         id:
             column: JOB_ID
             type: integer
+            unsigned: true
             generator:
                 strategy: AUTO
     fields:
@@ -27,3 +28,18 @@ AppBundle\Entity\Job:
             type: string
             length : 50
             nullable: true
+    manyToMany:
+        technologies:
+            targetEntity: Technology
+            joinTable:
+                name: JOB_TECHNOLOGIES
+                joinColumns:
+                    JOB_ID:
+                        referencedColumnName: JOB_ID
+                inverseJoinColumns:
+                    TECH_ID:
+                        referencedColumnName: TECH_ID
+    oneToMany:
+        accomplishments:
+            targetEntity: Accomplishment
+            mappedBy: job

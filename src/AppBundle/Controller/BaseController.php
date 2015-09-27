@@ -15,10 +15,10 @@ class BaseController extends Controller
                 "Caption" => "Home",
                 "Route" => "home"
             ),
-            // array (
-            //     "Caption" => "Resume",
-            //     "Route" => "resume"
-            // ),
+            array (
+                "Caption" => "Resume",
+                "Route" => "resume"
+            ),
             // array (
             //     "Caption" => "Portfolio",
             //     "Route" => "portfolio"

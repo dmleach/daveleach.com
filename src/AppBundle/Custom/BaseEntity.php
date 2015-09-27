@@ -6,7 +6,11 @@ class BaseEntity
 {
     /**
      * Extends a Doctrine-generated entity class by absorbing the private
-     * properties using the public get methods
+     * properties using the public get methods.
+     *
+     * Normal inheritance won't work in this situation because there's no way
+     * to have Doctrine instantiate a custom class when data is fetched from
+     * the database as opposed to the automatically-created entity objects.
      */
     public function __construct($BaseEntity)
     {
