@@ -16,15 +16,15 @@
                         {% if job.title is defined and job.title is not null %}
                             {{ job.title }}<br>
                         {% endif %}
-                        {% if job.startMonth is defined and job.endMonth is defined %}
-                            {% if job.startMonth is not null and job.endMonth is not null %}
-                                {{ job.startMonth }} to {{ job.endMonth }}<br>
+                        {% if job.StartMonthYear is defined and job.EndMonthYear is defined %}
+                            {% if job.StartMonthYear is not null and job.EndMonthYear is not null %}
+                                {{ job.StartMonthYear }} to {{ job.EndMonthYear }}<br>
                             {% endif %}
-                            {% if job.startMonth is not null and job.endMonth is null %}
-                                {{ job.startMonth }} to present<br>
+                            {% if job.StartMonthYear is not null and job.EndMonthYear is null %}
+                                {{ job.StartMonthYear }} to present<br>
                             {% endif %}
-                            {% if job.startMonth is null and job.endMonth is not null %}
-                                Through {{ job.endMonth }}<br>
+                            {% if job.StartMonthYear is null and job.EndMonthYear is not null %}
+                                Through {{ job.EndMonthYear }}<br>
                             {% endif %}
                         {% endif %}
                         {% if job.accomplishments is defined and job.accomplishments is not null %}

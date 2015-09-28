@@ -8,6 +8,5 @@
 /bin/
 /composer.phar
 /log
-/src/AppBundle/Entity
 /vendor/
 /web/bundles/
