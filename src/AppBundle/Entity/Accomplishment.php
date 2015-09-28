@@ -78,8 +78,14 @@ class Accomplishment
      * @var \AppBundle\Entity\Job $job The job to which this accomplishment
      *     belongs
      *
-     * @ORM\ManyToOne(targetEntity="Job", inversedBy="accomplishments")
-     * @ORM\JoinColumn(name="JOB_ID", referencedColumnName="JOB_ID")
+     * @ORM\ManyToOne(
+     *     targetEntity="Job",
+     *     inversedBy="Accomplishments"
+     * )
+     * @ORM\JoinColumn(
+     *     name="JOB_ID",
+     *     referencedColumnName="JOB_ID"
+     * )
      */
     private $job;
 
