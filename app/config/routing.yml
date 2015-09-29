@@ -18,6 +18,10 @@ blog_post_comments:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
+message:
+    path:       /message
+    defaults:   { _controller: AppBundle:Message:display }
+
 portfolio:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }

@@ -19,14 +19,10 @@ class BaseController extends Controller
                 "Caption" => "Resume",
                 "Route" => "resume"
             ),
-            // array (
-            //     "Caption" => "Portfolio",
-            //     "Route" => "portfolio"
-            // ),
-            // array (
-            //     "Caption" => "Blog",
-            //     "Route" => "blog"
-            // ),
+            array (
+                "Caption" => "Contact",
+                "Route" => "message"
+            ),
         );
     }
 

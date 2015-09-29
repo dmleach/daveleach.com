@@ -4,6 +4,11 @@ parameters:
 #    parameter_name: value
 
 services:
+    appbundle.form.builder.message:
+        class: AppBundle\Builder\MessageForm
+        tags:
+            - name: form.type
+              alias: ServiceMessageForm
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
