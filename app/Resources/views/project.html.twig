@@ -4,26 +4,26 @@
 <div class="row">
 	<div class="8u 12u(mobile)">
 		<article class="box post">
-			{% if project.image is defined %}
-				<img src="{{ asset('bundles/app/images/' ~ project.image) }}" />
+			{% if project.Image is defined %}
+				<img src="{{ asset('bundles/app/images/' ~ project.Image) }}" />
 			{% endif %}
-			{% if project.name is defined %}
-				<header><h2>{{ project.name }}</h2></header>
+			{% if project.Name is defined %}
+				<header><h2>{{ project.Name }}</h2></header>
 			{% endif %}
-			{% if project.description is defined %}
-				<section><p>{{ project.description }}</p></section>
+			{% if project.Description is defined %}
+				<section><p>{{ project.Description }}</p></section>
 			{% endif %}
 		</article>
 	</div>
 	<div class="4u 12u(mobile)">
-		{% if project.technologies is defined %}
+		{% if project.TechnologySet is defined %}
 			<section class="box">
 				<header>
 					<h3>Project technologies</h3>
 				</header>
 				<ul class="divided">
-					{% for technology in project.technologies %}
-						<li>{{ technology.name }}</li>
+					{% for Technology in project.TechnologySet %}
+						<li>{{ Technology.Name }}</li>
 					{% endfor %}
 				</ul>
 			</section>

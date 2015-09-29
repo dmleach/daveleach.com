@@ -33,7 +33,7 @@ class ProjectController extends BaseController
     {
         $QueryResult = $this->getDoctrine()
             ->getRepository("AppBundle:Project")
-            ->findBy(array ("shortname" => $shortname));
+            ->findBy(array ("ShortName" => $shortname));
 
         if (count($QueryResult) == 1) {
             $Project = $QueryResult[0];
@@ -41,7 +41,6 @@ class ProjectController extends BaseController
             $Project = null;
         };
 
-        dump($Project);
         $this->Project = $Project;
     }
 }

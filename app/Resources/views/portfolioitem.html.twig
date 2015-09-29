@@ -1,18 +1,18 @@
 <div class="4u 12u(mobile)">
     <section class="box">
-        {% if project.image is defined  %}
-            <a href="{{ path('portfolio_project', {'shortname': project.shortname}) }}">
-                <img src="{{ asset('bundles/app/images/' ~ project.image) }}" class="image" alt="" />
+        {% if project.Image is defined  %}
+            <a href="{{ path('portfolio_project', {'shortname': project.ShortName}) }}">
+                <img src="{{ asset('bundles/app/images/' ~ project.Image) }}" class="image" alt="" />
             </a>
         {% endif %}
-        {% if project.name is defined %}
-            <header><h3>{{ project.name }}</h3></header>
+        {% if project.Name is defined %}
+            <header><h3>{{ project.Name }}</h3></header>
         {% endif %}
-        {% if project.synopsis is defined %}
-            <p>{{ project.synopsis }}</p>
+        {% if project.Synopsis is defined %}
+            <p>{{ project.Synopsis }}</p>
         {% endif %}
-        {% if project.shortname is defined %}
-            <footer><a href="{{ path('portfolio_project', {'shortname': project.shortname}) }}" class="button alt">Find out more</a></footer>
+        {% if project.ShortName is defined %}
+            <footer><a href="{{ path('portfolio_project', {'shortname': project.ShortName}) }}" class="button alt">Find out more</a></footer>
         {% endif %}
     </section>
 </div>
