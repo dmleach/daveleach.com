@@ -6,6 +6,10 @@ home:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
+admin:
+    path:       /admin
+    defaults:   { _controller: AppBundle:Admin:display }
+
 blog:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
@@ -17,6 +21,12 @@ blog_post:
 blog_post_comments:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
+
+fos_user:
+    resource:   "@FOSUserBundle/Resources/config/routing/all.xml"
+
+logout:
+    path:       /logout
 
 message:
     path:       /message
