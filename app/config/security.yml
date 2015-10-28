@@ -13,11 +13,9 @@ security:
         - { path: ^/admin, roles: ROLE_ADMIN }
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    admin: { password: adminpass, roles: ['ROLE_ADMIN'] }
+        main:
+            entity: { class: AppBundle\Entity\User, property: Username }
 
     encoders:
         # PASSWORDS ARE NOT ENCODED ###########################################
-        Symfony\Component\Security\Core\User\User: plaintext
+        AppBundle\Entity\User: plaintext
