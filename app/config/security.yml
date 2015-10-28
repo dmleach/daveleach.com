@@ -1,34 +1,23 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/book/security.html
 security:
+    firewalls:
+        secured_area:
+            pattern: ^/
+            anonymous: ~
+            logout: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, role: ROLE_ADMIN }
+        # URLs that start with "admin" require the administrator role
+        - { path: ^/admin, roles: ROLE_ADMIN }
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin: { password: adminpass, roles: ['ROLE_ADMIN'] }
 
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
-
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        main:
-            anonymous:    true
-            form_login:
-                provider: fos_userbundle
-                csrf_provider: security.csrf.token_manager
-            logout:       true
-            pattern: ^/
-
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
-    providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username
-
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        # PASSWORDS ARE NOT ENCODED ###########################################
+        Symfony\Component\Security\Core\User\User: plaintext

@@ -22,8 +22,14 @@ blog_post_comments:
     path:       /
     defaults:   { _controller: AppBundle:Home:display }
 
-fos_user:
-    resource:   "@FOSUserBundle/Resources/config/routing/all.xml"
+login:
+    path:       /login
+    defaults:   { _controller: AppBundle:Login:display }
+
+login_check:
+    # The firewall will automatically handle this path. There's no need to
+    # create a controller for it
+    path:       /login_check
 
 logout:
     path:       /logout

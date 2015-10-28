@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="4u filler">
+        </div>
+        <div class="4u">
+            {% if error %}
+                <section class="box error">
+                    <!-- <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p> -->
+                    <p>{{ error.message }}</p>
+                </section>
+            {% endif %}
+            <form action="{{ path('login_check') }}" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="_password" />
+
+                <footer>
+                    <button type="submit" class="button big">Login</button>
+                </footer>
+            </form>
+        </div>
+        <div class="4u filler">
+        </div>
+    </div>
+{% endblock %}
