@@ -43,7 +43,7 @@ class User implements UserInterface
     /**
      * @var string $Email The user's email address
      *
-     * @ORM\Column(name="USER_EMAIL", type="string", length=100, nullable=false)
+     * @ORM\Column(name="USER_EMAIL", type="string", length=100, nullable=true)
      */
     private $Email;
 
