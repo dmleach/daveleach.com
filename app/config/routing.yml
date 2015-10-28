@@ -32,6 +32,8 @@ login_check:
     path:       /login_check
 
 logout:
+    # The firewall will automatically handle this path. There's no need to
+    # create a controller for it
     path:       /logout
 
 message:

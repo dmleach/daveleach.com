@@ -10,7 +10,7 @@ class BaseController extends Controller
 {
     protected function calcNavMenu()
     {
-        return array (
+        $NavMenu = array (
             array (
                 "Caption" => "Home",
                 "Route" => "home"
@@ -24,6 +24,13 @@ class BaseController extends Controller
                 "Route" => "message"
             ),
         );
+
+        return array_merge($NavMenu, $this->displayAdditionalNav());
+    }
+
+    protected function displayAdditionalNav()
+    {
+        return array ();
     }
 
     protected function displayBodyClass()

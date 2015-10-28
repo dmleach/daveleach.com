@@ -3,7 +3,9 @@ security:
         secured_area:
             pattern: ^/
             anonymous: ~
-            logout: ~
+            logout:
+                path: /logout
+                target: /
             form_login:
                 login_path: /login
                 check_path: /login_check
