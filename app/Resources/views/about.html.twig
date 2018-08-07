@@ -1,0 +1,21 @@
+{% if about is defined %}
+
+<div class="4u 12u(mobile)">
+    <section>
+        {% if about.header is defined %}
+            <header>
+                <h2>{{ about.header }}</h2>
+            </header>
+        {% endif %}
+        {% if about.image is defined %}
+            <a href="#" class="image featured"><img src="images/pic10.jpg" alt="" /></a>
+        {% endif %}
+        {% if about.text is defined %}
+            {% for text in about.text %}
+                <p>{{ text }}</p>
+            {% endfor %}
+        {% endif %}
+    </section>
+</div>
+
+{% endif %}

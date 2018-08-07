@@ -1,0 +1,53 @@
+<div class="4u 12u(mobile)">
+    <section>
+        <header>
+            <h2>Get in touch</h2>
+        </header>
+        {% if social is defined %}
+            <ul class="social">
+                {% for sitename, site in social %}
+                    <li>
+                        <a class="icon fa-{{ site['icon'] }}" href="{{ site['link'] }}" target="daveleachsocial">
+                            <span class="label">{{ sitename }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <ul class="contact">
+            {% if address is defined %}
+                <li>
+                    <h3>Address</h3>
+                    <p>
+                        {% for addressline in address %}
+                            {{ addressline }}
+                            {% if not loop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endif %}
+            {% if email is defined %}
+                <li>
+                    <h3>Email</h3>
+                    <p>
+                        {% for emailaddress in email %}
+                            <a href="mailto:{{ emailaddress }}">{{ emailaddress }}</a>
+                            {% if not loop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endif %}
+            {% if phone is defined %}
+                <li>
+                    <h3>Phone</h3>
+                    <p>
+                        {% for phonenumber in phone %}
+                            {{ phonenumber }}
+                            {% if not loop.last %}<br>{% endif %}
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endif %}
+        </ul>
+    </section>
+</div>

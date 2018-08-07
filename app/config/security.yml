@@ -1,0 +1,23 @@
+security:
+    firewalls:
+        secured_area:
+            pattern: ^/
+            anonymous: ~
+            logout:
+                path: /logout
+                target: /
+            form_login:
+                login_path: /login
+                check_path: /login_check
+
+    access_control:
+        # URLs that start with "admin" require the administrator role
+        - { path: ^/admin, roles: ROLE_ADMIN }
+
+    providers:
+        main:
+            entity: { class: AppBundle\Entity\User, property: Username }
+
+    encoders:
+        # PASSWORDS ARE NOT ENCODED ###########################################
+        AppBundle\Entity\User: plaintext

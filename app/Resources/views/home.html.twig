@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block header %}
+<section id="banner">
+	{% block headerBanner %}
+		<header>
+			<h2>{{ headline }}</h2>
+			<p>{{ subtitle }}</p>
+		</header>
+	{% endblock %}
+</section>
+{% endblock %}
+
+{% block body %}
+{% if portfolio is defined %}
+	{% include 'portfolio.html.twig' %}
+{% endif %}
+{% if blog is defined %}
+	{% include 'blog.html.twig' %}
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+<div class="row">
+	{% if events is defined %}
+		{% include 'events.html.twig' %}
+	{% endif %}
+</div>
+{% endblock %}

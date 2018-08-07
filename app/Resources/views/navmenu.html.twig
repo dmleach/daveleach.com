@@ -1,0 +1,9 @@
+<nav id="nav">{% block nav %}
+    <ul>
+        {% if navMenu is defined %}
+            {% for navItem in navMenu %}
+                <li><a href="{{ path(navItem.Route) }}">{{ navItem.Caption }}</a></li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+{% endblock %}</nav>

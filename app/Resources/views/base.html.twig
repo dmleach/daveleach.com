@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{{ title }}{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% block stylesheets %}
+            {% stylesheets "bundles/app/css/*" filter="cssrewrite" %}
+                <link rel="stylesheet" type="text/css" href="{{ asset('bundles/app/css/dopetrope.css') }}"  />
+				<link rel="stylesheet" href="{{ asset('bundles/app/css/font-awesome.min.css') }}">
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('bundles/app/oglethorpe-d.ico') }}" />
+	</head>
+
+    <body class="{{ bodyclass }}">
+		<div id="page-wrapper">
+			<div id="header-wrapper">
+				<div id="header">
+					<h1><a href="{{ path('home') }}">{{ title }}</a></h1>
+					{% include 'navmenu.html.twig' %}
+					{% block header %}
+					{% endblock %}
+				</div>
+			</div>
+            <div id="main-wrapper">
+            	<div class="container">
+                    {% block body %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="footer-wrapper">
+            	<section id="footer" class="container">
+                    {% block footer %}
+                    {% endblock %}
+                    <div class="row">
+                    	{% if links is defined %}
+                    		{% for linkset in links %}
+                    			{% if loop.index <= 2 %}
+                    				{% include 'links.html.twig' %}
+                    			{% endif %}
+                    		{% endfor %}
+                    	{% endif %}
+						{% if about is defined %}
+							{% include 'about.html.twig' %}
+						{% endif %}
+                    	{% if address is defined or email is defined or phone is defined%}
+                    		{% include 'contact.html.twig' %}
+                    	{% endif %}
+                    </div>
+                    <div class="row">
+                        {% include 'credit.html.twig' %}
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/jquery.dropotron.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/skel.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/skel-viewport.min.js') }}"></script>
+        <script src="{{ asset('bundles/app/js/util.js') }}"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="{{ asset('bundles/app/js/main.js') }}"></script>
+    </body>
+</html>

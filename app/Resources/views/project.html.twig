@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="row">
+	<div class="8u 12u(mobile)">
+		<article class="box post">
+			{% if project.Image is defined %}
+				<img src="{{ asset('bundles/app/images/' ~ project.Image) }}" />
+			{% endif %}
+			{% if project.Name is defined %}
+				<header><h2>{{ project.Name }}</h2></header>
+			{% endif %}
+			{% if project.Description is defined %}
+				<section><p>{{ project.Description }}</p></section>
+			{% endif %}
+		</article>
+	</div>
+	<div class="4u 12u(mobile)">
+		{% if project.TechnologySet is defined %}
+			<section class="box">
+				<header>
+					<h3>Project technologies</h3>
+				</header>
+				<ul class="divided">
+					{% for Technology in project.TechnologySet %}
+						<li>{{ Technology.Name }}</li>
+					{% endfor %}
+				</ul>
+			</section>
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

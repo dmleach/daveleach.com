@@ -1,0 +1,53 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+home:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+admin:
+    path:       /admin
+    defaults:   { _controller: AppBundle:Admin:display }
+
+blog:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+blog_post:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+blog_post_comments:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+login:
+    path:       /login
+    defaults:   { _controller: AppBundle:Login:display }
+
+login_check:
+    # The firewall will automatically handle this path. There's no need to
+    # create a controller for it
+    path:       /login_check
+
+logout:
+    # The firewall will automatically handle this path. There's no need to
+    # create a controller for it
+    path:       /logout
+
+message:
+    path:       /message
+    defaults:   { _controller: AppBundle:Message:display }
+
+portfolio:
+    path:       /
+    defaults:   { _controller: AppBundle:Home:display }
+
+portfolio_project:
+    path:       /portfolio/{shortname}
+    defaults:   { _controller: AppBundle:Project:display }
+
+resume:
+    path:       /resume
+    defaults:   { _controller: AppBundle:Resume:display }

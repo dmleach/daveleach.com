@@ -1,0 +1,44 @@
+<div class="6u 12u(mobile)">
+    <section class="box">
+        {% if blog['image'] is defined and blog['route'] is defined %}
+            <a href="{{ path(blog['route']) }}" class="image featured">
+                <img src="{{ asset('bundles/app/images/' ~ blog['image']) }}" alt="" />
+            </a>
+        {% endif %}
+        {% if blog['image'] is defined and blog['route'] is not defined %}
+            <img src="{{ asset('bundles/app/images/' ~ blog['image']) }}" class="image featured" alt="" />
+        {% endif %}
+        {% if blog['title'] is defined and blog['time'] is defined %}
+            <header>
+                <h3>{{ blog['title'] }}</h3>
+                <p>Posted {{ blog['time'] }}</p>
+            </header>
+        {% endif %}
+        {% if blog['title'] is defined and blog['time'] is not defined %}
+            <header>
+                <h3>{{ blog['title'] }}</h3>
+            </header>
+        {% endif %}
+        {% if blog['excerpt'] is defined %}
+            <p>{{ blog['excerpt'] }}</p>
+        {% endif %}
+        <footer>
+            <ul class="actions">
+                {% if blog['route'] is defined %}
+                    <li><a href="{{ path(blog['route']) }}" class="button icon fa-file-text">Continue Reading</a></li>
+                {% endif %}
+                {% if blog['comments'] is defined %}
+                    {% if blog['comments']['count'] is defined and blog['comments']['route'] is defined %}
+                        <li><a href="{{ path(blog['comments']['route']) }}" class="button alt icon fa-comment">{{ blog['comments']['count'] }} comments</a></li>
+                    {% endif %}
+                    {% if blog['comments']['count'] is defined and blog['comments']['route'] is not defined %}
+                        <li>{{ blog['comments']['count'] }} comments</li>
+                    {% endif %}
+                    {% if blog['comments']['count'] is not defined and blog['comments']['route'] is defined %}
+                        <li><a href="{{ path(blog['comments']['route']) }}" class="button alt icon fa-comment">Comments</a></li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </footer>
+    </section>
+</div>
